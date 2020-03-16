@@ -1,20 +1,55 @@
 #include<iostream>
 #include "Navegador.cpp"
+#include <locale.h>
 using namespace std;
 
 int main(){
 int opc, b;
 string n,n1,n2, n3;
-n="Esta es la primera pestania pestania\nhsuhudhsauidhsa\njsjd\ndfdgdf\nfdgdfgd\ngdgfdgfdgfds\nksdhsjsd"
-"\nAqui esta una continuacion de lo que sigue";
-n1="Esta es la segunda pestania\nhdufdifdsjidijf\nsgjhgsjhdgsdsa\nnsdgjshgdjsg\bsdhhdsjsa";
-n2="Esta es la penultima pestania\nusjidhjshduisah\nhusagdsag\njsdishaui\nsdhsajdhsahdissdsad";
-n3="Esta es la ultima pestania\nhdhkshfkjsdhf\nsdhdhud\njdhuishdf\ndfhdsjkhfhdsfdsf";
+setlocale(LC_ALL, "spanish");
+	n="            _________________________                                               "
+	 "\n    _______|_____Pestaña 1_________|_________________________________________________"
+	 "\n    |                                                                               |"
+	 "\n    |                                                                               |"
+	 "\n    |                                                                               |"
+	 "\n    |                                                                               |"
+	 "\n    |          https://www.youtube.com/?gl=ES&hl=es                                 |"
+	 "\n    |                                                                               |"
+	 "\n    |                                                                               |"
+	 "\n    |                                                                               |"
+	 "\n    |                                                                               |"
+	 "\n    |_______________________________________________________________________________|";	
+
+
+  n1="\n       ________________________                                   "
+     "\n     __|_____Pestaña 2________|______________________________________________________"
+	 "\n    |                                                                               |"
+	 "\n    |                                                                               |"
+     "\n    |                                                                               |"
+     "\n    |                                                                               |"
+	 "\n    |     https://sii.upp.edu.mx/vista/alumnos/vLoginAlumnos.php                    |"
+     "\n    |                                                                               |"
+     "\n    |                                                                               |"
+     "\n    |                                                                               |"
+     "\n    |                                                                               |"
+     "\n    |______________________________________________________________________________ |";
+     
+  n2="\n      ________________________                                   "
+     "\n    __|_____Pestaña 3________|_________________________________________________________"
+     "\n    |                                                                                 |"
+     "\n    |                                                                                 |"
+     "\n    |                                                                                 |"
+     "\n    |                                                                                 |"
+     "\n    |       https://www.instagram.com/jose._.problemas/?hl=es-la                      |"
+     "\n    |                                                                                 |"
+     "\n    |                                                                                 |"
+     "\n    |                                                                                 |"
+     "\n    |                                                                                 |"
+     "\n    |_________________________________________________________________________________|";
 Navegador p1;
 p1.Apilar(n);
 p1.Apilar(n1);
 p1.Apilar(n2);
-p1.Apilar(n3);
 do{
 system("cls"); opc=p1.MenuPrincipal();
 switch(opc){
