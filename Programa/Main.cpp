@@ -4,10 +4,10 @@
 using namespace std;
 
 int main(){
-	int opc, b;
-	string n,n1,n2, n3;
+	int opc, bandera;
+	string nodo,nodo1,nodo2;
 	setlocale(LC_ALL, "spanish");
-	n="            _________________________                                               "
+nodo="\n           _________________________                                               "
 	 "\n    _______|_____Pestaña 1_________|_________________________________________________"
 	 "\n    |                                                                               |"
 	 "\n    |                                                                               |"
@@ -21,7 +21,7 @@ int main(){
 	 "\n    |_______________________________________________________________________________|";	
 
 
-    n1="\n     ________________________                                   "
+nodo1="\n       ________________________                                   "
      "\n     __|_____Pestaña 2________|______________________________________________________"
 	 "\n    |                                                                               |"
 	 "\n    |                                                                               |"
@@ -34,7 +34,7 @@ int main(){
      "\n    |                                                                               |"
      "\n    |______________________________________________________________________________ |";
      
-    n2="\n    ________________________                                   "
+nodo2="\n      ________________________                                   "
      "\n    __|_____Pestaña 3________|_________________________________________________________"
      "\n    |                                                                                 |"
      "\n    |                                                                                 |"
@@ -47,9 +47,9 @@ int main(){
      "\n    |                                                                                 |"
      "\n    |_________________________________________________________________________________|";
 	Navegador p1;
-	p1.Apilar(n);
-	p1.Apilar(n1);
-	p1.Apilar(n2);
+	p1.Apilar(nodo);
+	p1.Apilar(nodo1);
+	p1.Apilar(nodo2);
 	do{
 	    system("cls"); 
 	    opc=p1.MenuPrincipal();
@@ -57,8 +57,8 @@ int main(){
 	        case 1: system("cls"); p1.VerTope(); system("pause"); break;
 	        case 2: system("cls"); p1.Atras(); system("pause"); break;
 	        case 3: system("cls"); p1.Adelante(); system("pause"); break;
-	        case 4: system("cls"); b=0; p1.DesApilar(b); system("pause"); break;
-	        case 5: system("cls"); b=1; p1.DesApilar(b); system("pause"); break;
+	        case 4: system("cls"); bandera=0; p1.DesApilar(bandera); system("pause"); break;
+	        case 5: system("cls"); bandera=1; p1.DesApilar(bandera); system("pause"); break;
 	    }
 	}while(opc!=6);
 }

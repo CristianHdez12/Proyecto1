@@ -5,13 +5,13 @@ using namespace std;
 
 class Pestania{
 	private:
-	string n;
-	Pestania *s;
+	string nodo;
+	Pestania *siguiente;
 	friend class Navegador;
 	public:
-	Pestania(string n){
-		this->n=n;
-		this->s=NULL;
+	Pestania(string nodo){
+		this->nodo=nodo;
+		this->siguiente=NULL;
 	} 
 	~Pestania(){
 		cout<<"Se ha liberado la memoria\n";

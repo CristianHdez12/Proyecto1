@@ -4,8 +4,8 @@ using namespace std;
 
 
 Navegador::Navegador(){
-	t=NULL;
-	t2=NULL;
+	tope=NULL;
+	tope2=NULL;
 }
 
 Navegador::~Navegador(){
@@ -18,26 +18,26 @@ int Navegador::MenuPrincipal(){
 	cin>>opc;
 	return opc;
 }
-void Navegador::Apilar(string n){
+void Navegador::Apilar(string nodo){
 	
-	Pestania *nuevoNodo= new Pestania(n);
+	Pestania *nuevoNodo= new Pestania(nodo);
 	
 	if(!nuevoNodo){
 		cout<<"No se puede reservar la memoria";
 	}
 	else{
-		nuevoNodo->s=t;
-		t=nuevoNodo;
+		nuevoNodo->siguiente=tope;
+		tope=nuevoNodo;
 	}
 }
 
 void Navegador::DesApilar(int a){
 	Pestania *aux=NULL;
-	aux=t;
+	aux=tope;
 	if(a==0){
-	    if(t2==NULL){
+	    if(tope2==NULL){
 	        if(PilaVacia()==false){
-		        t=aux->s;
+		        tope=aux->siguiente;
 		        cout<<"La pestania ha sido cerrada correctamente\n";
 	            delete(aux);
 	        }
@@ -50,9 +50,9 @@ void Navegador::DesApilar(int a){
 	    }
 	}
 	if(a==1){
-	    if(t2==NULL){
+	    if(tope2==NULL){
 	        if(PilaVacia()==false){
-		        t=aux->s;
+		        tope=aux->siguiente;
 		        cout<<"La pestania ha sido cerrada correctamente\n";
 		        delete(aux);
 		        this->Navegador::DesApilar(a);
@@ -69,18 +69,18 @@ void Navegador::DesApilar(int a){
 
 void Navegador::Atras(){
 	Pestania *aux=NULL;
-	aux=t; 
+	aux=tope; 
 	if(PilaVacia()==false){
-	    if(t->s==NULL){
-		    cout<<t->n<<endl;
+	    if(tope->siguiente==NULL){
+		    cout<<tope->nodo<<endl;
 		    cout<<"\n\tPrimera pestania, no puedes ir hacia atras"<<endl;
 	    }
 	    else{
-		    t=aux->s;
-		    Pestania *nuevoNodo2=new Pestania(aux->n);
-		    nuevoNodo2->s=t2;
-		    t2=nuevoNodo2;
-		    cout<<t->n<<endl;
+		    tope=aux->siguiente;
+		    Pestania *nuevoNodo2=new Pestania(aux->nodo);
+		    nuevoNodo2->siguiente=tope2;
+		    tope2=nuevoNodo2;
+		    cout<<tope->nodo<<endl;
 	    }
 	}
 	else{
@@ -90,17 +90,17 @@ void Navegador::Atras(){
 
 void Navegador::Adelante(){
 	Pestania *aux2=NULL;
-	aux2=t2;
+	aux2=tope2;
 	if(PilaVacia()==false){
-	    if(t2==NULL){
-		    cout<<t->n<<endl;
+	    if(tope2==NULL){
+		    cout<<tope->nodo<<endl;
 		    cout<<"\n\tUltima pestania, no puedes ir hacia adelante\n";
 	    }
 	    else{
-		    t2=aux2->s;
-		    aux2->s=t;
-		    t=aux2;
-		    cout<<t->n<<endl;
+		    tope2=aux2->siguiente;
+		    aux2->siguiente=tope;
+		    tope=aux2;
+		    cout<<tope->nodo<<endl;
 	    }
 	}
 	else{
@@ -110,7 +110,7 @@ void Navegador::Adelante(){
 
 void Navegador::VerTope(){
 	if(PilaVacia()==false){
-		cout<<t->n<<endl;
+		cout<<tope->nodo<<endl;
 	}
 	else{
 		cout<<"No hay mas pestanias abiertas\n";
@@ -118,7 +118,7 @@ void Navegador::VerTope(){
 }
 
 bool Navegador::PilaVacia(){
-	if(t==NULL){
+	if(tope==NULL){
 		return true;
 	}
 	else{

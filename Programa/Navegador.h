@@ -4,8 +4,8 @@
 
 class Navegador{
 	private: 
-	    Pestania *t;
-	    Pestania *t2;
+	    Pestania *tope;
+	    Pestania *tope2;
 	public:
 	    Navegador();
 	    ~Navegador();
