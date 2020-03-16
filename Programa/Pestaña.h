@@ -4,7 +4,7 @@
 using namespace std; 
 
 class Pestania{
-	public:
+	private:
 	string n;
 	Pestania *s;
 	friend class Navegador;

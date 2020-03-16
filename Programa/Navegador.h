@@ -3,7 +3,7 @@
 #define NavegadorH
 
 class Navegador{
-	public: 
+	private: 
 	    Pestania *t;
 	    Pestania *t2;
 	public:
