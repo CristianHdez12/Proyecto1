@@ -18,7 +18,7 @@ int Navegador::MenuPrincipal(){
 	cin>>opc;
 	return opc;
 }
-void Navegador::Apilar(string nodo){
+void Navegador::AbrirPestania(string nodo){
 	
 	Pestania *nuevoNodo= new Pestania(nodo);
 	
@@ -31,12 +31,12 @@ void Navegador::Apilar(string nodo){
 	}
 }
 
-void Navegador::DesApilar(int a){
+void Navegador::CerrarPestania(int a){
 	Pestania *aux=NULL;
 	aux=tope;
 	if(a==0){
 	    if(tope2==NULL){
-	        if(PilaVacia()==false){
+	        if(SinPestanias()==false){
 		        tope=aux->siguiente;
 		        cout<<"La pestania ha sido cerrada correctamente\n";
 	            delete(aux);
@@ -51,11 +51,11 @@ void Navegador::DesApilar(int a){
 	}
 	if(a==1){
 	    if(tope2==NULL){
-	        if(PilaVacia()==false){
+	        if(SinPestanias()==false){
 		        tope=aux->siguiente;
 		        cout<<"La pestania ha sido cerrada correctamente\n";
 		        delete(aux);
-		        this->Navegador::DesApilar(a);
+		        this->Navegador::CerrarPestania(a);
 	        }
  	        else{
 		    cout<<"No hay mas pestanias abiertas\n";
@@ -67,10 +67,10 @@ void Navegador::DesApilar(int a){
 	}
 }
 
-void Navegador::Atras(){
+void Navegador::MoverAtras(){
 	Pestania *aux=NULL;
 	aux=tope; 
-	if(PilaVacia()==false){
+	if(SinPestanias()==false){
 	    if(tope->siguiente==NULL){
 		    cout<<tope->nodo<<endl;
 		    cout<<"\n\tPrimera pestania, no puedes ir hacia atras"<<endl;
@@ -88,10 +88,10 @@ void Navegador::Atras(){
 	}
 }
 
-void Navegador::Adelante(){
+void Navegador::MoverAdelante(){
 	Pestania *aux2=NULL;
 	aux2=tope2;
-	if(PilaVacia()==false){
+	if(SinPestanias()==false){
 	    if(tope2==NULL){
 		    cout<<tope->nodo<<endl;
 		    cout<<"\n\tUltima pestania, no puedes ir hacia adelante\n";
@@ -108,8 +108,8 @@ void Navegador::Adelante(){
 	}
 }
 
-void Navegador::VerTope(){
-	if(PilaVacia()==false){
+void Navegador::PestaniaActual(){
+	if(SinPestanias()==false){
 		cout<<tope->nodo<<endl;
 	}
 	else{
@@ -117,7 +117,7 @@ void Navegador::VerTope(){
 	}
 }
 
-bool Navegador::PilaVacia(){
+bool Navegador::SinPestanias(){
 	if(tope==NULL){
 		return true;
 	}

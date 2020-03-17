@@ -47,18 +47,18 @@ nodo2="\n      ________________________                                   "
      "\n    |                                                                                 |"
      "\n    |_________________________________________________________________________________|";
 	Navegador p1;
-	p1.Apilar(nodo);
-	p1.Apilar(nodo1);
-	p1.Apilar(nodo2);
+	p1.AbrirPestania(nodo);
+	p1.AbrirPestania(nodo1);
+	p1.AbrirPestania(nodo2);
 	do{
 	    system("cls"); 
 	    opc=p1.MenuPrincipal();
 	    switch(opc){
-	        case 1: system("cls"); p1.VerTope(); system("pause"); break;
-	        case 2: system("cls"); p1.Atras(); system("pause"); break;
-	        case 3: system("cls"); p1.Adelante(); system("pause"); break;
-	        case 4: system("cls"); bandera=0; p1.DesApilar(bandera); system("pause"); break;
-	        case 5: system("cls"); bandera=1; p1.DesApilar(bandera); system("pause"); break;
+	        case 1: system("cls"); p1.PestaniaActual(); system("pause"); break;
+	        case 2: system("cls"); p1.MoverAtras(); system("pause"); break;
+	        case 3: system("cls"); p1.MoverAdelante(); system("pause"); break;
+	        case 4: system("cls"); bandera=0; p1.CerrarPestania(bandera); system("pause"); break;
+	        case 5: system("cls"); bandera=1; p1.CerrarPestania(bandera); system("pause"); break;
 	    }
 	}while(opc!=6);
 }

@@ -7,15 +7,15 @@ class Navegador{
 	    Pestania *tope;
 	    Pestania *tope2;
 	public:
-	    Navegador();
+	     Navegador();
 	    ~Navegador();
 	    int MenuPrincipal();
-	    void Apilar(string);
-	    void DesApilar(int);
-	    void Adelante();
-	    void Atras();
-	    void VerTope();
-	    bool PilaVacia();	
+	    void AbrirPestania(string);
+	    void CerrarPestania(int);
+	    void MoverAtras();
+	    void MoverAdelante();
+	    void PestaniaActual();
+	    bool SinPestanias();
 };
 
 
